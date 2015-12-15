@@ -1,0 +1,11 @@
+= page_header do
+  - if can?(:create, Course::ExperiencePointsRecord)
+    = new_button(new_course_course_user_experience_points_record_path(current_course, params['course_user_id']))
+
+table.table.table-hover
+  thead
+    tr
+      th = t('.points_awarded')
+      th = t('.reason')
+  tbody
+    = render @experience_points_records

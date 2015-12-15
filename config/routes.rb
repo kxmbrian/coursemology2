@@ -177,6 +177,7 @@ Rails.application.routes.draw do
       resources :users, only: [:update, :destroy] do
         get 'invite' => 'user_invitations#new', on: :collection
         post 'invite' => 'user_invitations#create', on: :collection
+
       end
       post 'register' => 'user_registrations#create'
       get 'students' => 'users#students', as: :users_students
@@ -195,6 +196,11 @@ Rails.application.routes.draw do
           get 'download', on: :member
           resources :materials, path: 'files'
         end
+      end
+
+      resources :course_users, only: [] do
+        get '/' => 'experience_points_records#index'
+        resources :experience_points_records, only: [:index, :new, :create]
       end
     end
   end

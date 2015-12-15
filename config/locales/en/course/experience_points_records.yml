@@ -1,0 +1,11 @@
+en:
+  course:
+    experience_points_records:
+      index:
+        header: 'Experience Points History'
+        points_awarded: 'Points Awarded'
+        reason: 'Reason'
+      new:
+        header: 'Manually Award Experience Points'
+      create:
+        success: 'Experience Points Awarded.'
