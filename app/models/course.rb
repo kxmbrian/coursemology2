@@ -48,7 +48,7 @@ class Course < ActiveRecord::Base
                                 source: :actable, source_type: Course::LessonPlan::Event.name
   has_many :forums, dependent: :destroy
 
-  accepts_nested_attributes_for :invitations, :assessment_categories
+  accepts_nested_attributes_for :invitations, :assessment_categories, :course_users
 
   scope :ordered_by_title, -> { order(:title) }
 

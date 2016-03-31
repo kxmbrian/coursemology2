@@ -39,6 +39,8 @@ class CourseUser < ActiveRecord::Base
   has_many :achievements, through: :course_user_achievements, class_name: Course::Achievement.name
   has_one :invitation, class_name: Course::UserInvitation.name, dependent: :destroy, validate: true
 
+  accepts_nested_attributes_for :experience_points_records
+
   # @!attribute [r] experience_points
   #   Sums the total experience points for the course user.
   #   Default value is 0 when CourseUser does not have Course::ExperiencePointsRecord
