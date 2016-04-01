@@ -92,6 +92,13 @@ class Course::Assessment::Submission < ActiveRecord::Base
     AutoGradingJob.perform_later(self)
   end
 
+  def points_award_reason
+    assessment.title
+  end
+
+  def points_award_link
+  end
+
   protected
 
   # Handles the finalisation of a submission.

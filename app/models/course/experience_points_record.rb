@@ -23,4 +23,12 @@ class Course::ExperiencePointsRecord < ActiveRecord::Base
   def manually_awarded?
     actable_type.nil? && actable.nil?
   end
+
+  def display_reason
+    specific.nil? ? reason : specific.points_award_reason
+  end
+
+  def display_link
+    specific && specific.points_award_link
+  end
 end
