@@ -2,10 +2,21 @@
 class Course::Discussion::PostsController < Course::ComponentController
   before_action :load_topic
   authorize_resource :specific_topic
+# load  and auth posts --- done in concern . TO double check
+# remove old conterollers + specs
+# don't need to pass so many params in the js file
 
   include Course::Discussion::PostsConcern
 
   def create
+    render status: :bad_request unless super
+  end
+
+  def update
+    render status: :bad_request unless super
+  end
+
+  def destroy
     render status: :bad_request unless super
   end
 

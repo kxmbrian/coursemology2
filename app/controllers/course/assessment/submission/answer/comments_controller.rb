@@ -17,16 +17,19 @@ class Course::Assessment::Submission::Answer::CommentsController < \
     end
   end
 
-  def update
-    render status: :bad_request unless super
-  end
+#
+  # def update
+  #   render status: :bad_request unless super
+  # end
 
-  def destroy
-    render status: :bad_request unless super
-  end
+#
+  # def destroy
+  #   render status: :bad_request unless super
+  # end
 
   private
 
+# TODO need this?
   def create_topic_subscription
     @discussion_topic.ensure_subscribed_by(current_user)
   end
